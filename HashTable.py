@@ -6,8 +6,12 @@ class HashTable:
         self.values = [None] * self.capacity
 
     def __getitem__(self, item):
-        index = self.keys.index(item)
-        return self.values[index]
+        try:
+            index = self.keys.index(item)
+            return self.values[index]
+
+        except ValueError:
+            raise KeyError(item)
 
     def __setitem__(self, key, value):
         if self.full_capacity():
@@ -23,7 +27,7 @@ class HashTable:
         self.values[current_index] = value
 
     def __encrypt(self, key):
-        return sum(ord(k) for k in key) % self.capacity
+        return sum(ord(k) for k in str(key)) % self.capacity
 
     def __replace(self, index):
         if index >= self.capacity:
@@ -42,11 +46,20 @@ class HashTable:
             return False
 
     def get(self, item):
-        index = self.keys.index(item)
-        return self.values[index]
+        try:
+            index = self.keys.index(item)
+            return self.values[index]
+
+        except ValueError:
+            return None
 
     def __len__(self):
         return len([x for x in self.keys if x is not None])
+
+    def add(self, key, value):
+        self.__setitem__(key, value)
+
+
 
 
 table = HashTable()
@@ -64,9 +77,10 @@ table["newo"] = "onez"
 table["new"] = "oneb"
 table["newq"] = "onem"
 table["news"] = "oner"
+table.add(5, "five")
 
 print(table)
 
-print(table.get("name"))
+print(table.get("namez"))
 print(table["age"])
 print(len(table))
