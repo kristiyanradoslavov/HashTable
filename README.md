@@ -1,6 +1,7 @@
 Workshop HashTable
-1.	Overview
-Create a HashTable class that should have the needed functionality for a hash table, such as:\n
+1. Overview
+Create a HashTable class that should have the needed functionality for a hash table, such as:
+
 •	hash(key: str) - a function that should figure out where to store the key-value pair
 •	add(key: str, value: any) - adds a new key-value pair usign the hash function
 •	get(key: str) - returns the value corresponding to the given key
