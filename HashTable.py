@@ -54,7 +54,7 @@ class HashTable:
             return None
 
     def __len__(self):
-        return len([x for x in self.keys if x is not None])
+        return len(self.keys)
 
     def add(self, key, value):
         self.__setitem__(key, value)
