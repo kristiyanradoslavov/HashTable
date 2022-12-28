@@ -60,27 +60,10 @@ class HashTable:
         self.__setitem__(key, value)
 
 
-
-
 table = HashTable()
-
 table["name"] = "Peter"
 table["age"] = 25
-table["color"] = "blue"
-table["diet"] = "keto"
-table["something"] = "else"
-table["newggg"] = "one"
-table["newah"] = "onew"
-table["newsj"] = "onec"
-table["newj"] = "onex"
-table["newo"] = "onez"
-table["new"] = "oneb"
-table["newq"] = "onem"
-table["news"] = "oner"
-table.add(5, "five")
-
 print(table)
-
-print(table.get("namez"))
+print(table.get("name"))
 print(table["age"])
 print(len(table))
