@@ -17,6 +17,13 @@ class TestHashTable(TestCase):
         with self.assertRaises(KeyError) as ke:
             result = self.table["something_missing"]
 
+    def test_getitem_correct_input(self):
+        self.table["something"] = "new"
+        result = self.table["something"]
+        expected = "new"
+
+        self.assertEqual(result, expected)
+
 
 if __name__ == '__main__':
     main()
